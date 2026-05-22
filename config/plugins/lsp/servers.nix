@@ -1,4 +1,4 @@
-_:
+{ lib, pkgs, ... }:
 {
   plugins.lsp.servers = {
     lua_ls.enable = true;
@@ -46,7 +46,7 @@ _:
 
     nixd = {
       enable = true;
-      extraOptions.settings.nixd.formatting.command = [ "nixfmt" ];
+      extraOptions.settings.nixd.formatting.command = [ (lib.getExe pkgs.nixfmt) ];
     };
 
     ts_ls.enable = true;
