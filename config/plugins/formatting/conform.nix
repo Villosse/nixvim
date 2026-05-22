@@ -13,6 +13,21 @@ _: {
           if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
             return
           end
+          local config_files = {
+            ".prettierrc", ".prettierrc.js", ".prettierrc.json", ".prettierrc.yaml", ".prettierrc.yml", "prettier.config.js",
+            ".ocamlformat",
+            "rustfmt.toml", ".rustfmt.toml",
+            ".stylua.toml", "stylua.toml",
+            "pyproject.toml", "setup.cfg",
+            ".clang-format",
+            "dune-project",
+            "flake.nix",
+          }
+          local bufpath = vim.api.nvim_buf_get_name(bufnr)
+          local root = vim.fs.root(bufpath, config_files)
+          if not root then
+            return
+          end
           return { lsp_format = "fallback", timeout_ms = 500 }
         end
       '';

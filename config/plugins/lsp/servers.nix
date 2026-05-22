@@ -1,29 +1,25 @@
-{ pkgs, ... }:
+_:
 {
   plugins.lsp.servers = {
-    lua_ls = {
-      enable = true;
-    };
+    lua_ls.enable = true;
+
     hls = {
       enable = true;
       installGhc = false;
     };
-    ocamllsp = {
-      enable = true;
-    };
-    jdtls = {
-      enable = true;
-    };
-    cmake = {
-      enable = true;
-    };
+
+    ocamllsp.enable = true;
+
+    jdtls.enable = true;
+
+    cmake.enable = true;
+
     clangd = {
       enable = true;
       extraOptions = {
         capabilities = {
           offsetEncoding = [ "utf-16" ];
         };
-
         init_options = {
           usePlaceholders = true;
           completeUnimported = true;
@@ -40,73 +36,43 @@
         "--fallback-style=llvm"
       ];
     };
+
     rust_analyzer = {
       enable = true;
       installCargo = false;
       installRustc = false;
-      settings = {
-        check = {
-          command = "clippy";
-        };
-      };
+      settings.check.command = "clippy";
     };
-    nixd = {
-      enable = true;
-    };
-    tofu_ls = {
-      enable = true;
-    };
-    ts_ls = {
-      enable = true;
-    };
+
+    nixd.enable = true;
+
+    ts_ls.enable = true;
+
     eslint = {
       enable = true;
-      extraOptions.settings = {
-        workingDirectories.mode = "auto";
-      };
+      extraOptions.settings.workingDirectories.mode = "auto";
     };
-    pyright = {
-      enable = true;
-    };
-    gopls = {
-      enable = true;
-    };
-    # ansiblels = {
-    # enable = true;
-    # };
-    jsonls = {
-      enable = true;
-    };
-    helm_ls = {
-      enable = true;
-      extraOptions = {
-        settings = {
-          "helm_ls" = {
-            yamlls = {
-              path = "${pkgs.yaml-language-server}/bin/yaml-language-server";
-            };
-          };
-        };
-      };
-    };
+
+    jsonls.enable = true;
+
+    gopls.enable = true;
+
     yamlls = {
       enable = true;
-      extraOptions = {
-        settings = {
-          yaml = {
-            validate = true;
-            hover = true;
-            completion = true;
-            schemaStore = {
-              enable = true;
-              url = "https://www.schemastore.org/api/json/catalog.json";
-            };
-          };
+      extraOptions.settings.yaml = {
+        validate = true;
+        hover = true;
+        completion = true;
+        schemaStore = {
+          enable = true;
+          url = "https://www.schemastore.org/api/json/catalog.json";
         };
       };
     };
+
+    pyright.enable = true;
+
+    bashls.enable = true;
   };
-  extraPlugins = with pkgs.vimPlugins; [
-    ansible-vim
-  ];
+
 }

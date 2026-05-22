@@ -3,9 +3,14 @@ _: {
     html = [ "prettierd" ];
     css = [ "prettierd" ];
     javascript = [ "prettierd" ];
+    javascriptreact = [ "prettierd" ];
+    "javascript.jsx" = [ "prettierd" ];
     typescript = [ "prettierd" ];
+    typescriptreact = [ "prettierd" ];
+    "typescript.tsx" = [ "prettierd" ];
     markdown = [ "prettierd" ];
     yaml = [ "prettierd" ];
+    json = [ "jq" ];
     python = [
       "black"
       "isort"
@@ -19,18 +24,8 @@ _: {
       "shellharden"
       "shfmt"
     ];
-    json = [ "jq" ];
-    terraform = [ "terraform_fmt" ];
-    bicep = [ "bicep" ];
     ocaml = [ "ocamlformat" ];
-    "_" = [ "trim_whitespace" ];
-    javascriptreact = [ "eslint_d" ];
-    "javascript.jsx" = [ "eslint_d" ];
-    typescriptreact = [ "eslint_d" ];
-    "typescript.txs" = [ "eslint_d" ];
-    vue = [ "eslint_d" ];
-    svelte = [ "eslint_d" ];
-    astro = [ "eslint_d" ];
     nix = [ "nixfmt" ];
+    "_" = [ "trim_whitespace" ];
   };
 }
