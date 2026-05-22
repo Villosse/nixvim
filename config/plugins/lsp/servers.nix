@@ -8,7 +8,10 @@
       installGhc = false;
     };
 
-    ocamllsp.enable = true;
+    ocamllsp = {
+      enable = true;
+      package = null;
+    };
 
     jdtls.enable = true;
 
