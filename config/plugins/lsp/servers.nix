@@ -46,7 +46,7 @@
 
     nixd = {
       enable = true;
-      extraOptions.settings.nixd.formatting.command = [ (lib.getExe pkgs.nixfmt) ];
+      extraOptions.settings.nixd.formatting.command = [ "nix" "fmt" "--" ];
     };
 
     ts_ls.enable = true;
