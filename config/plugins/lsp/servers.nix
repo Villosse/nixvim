@@ -44,7 +44,10 @@ _:
       settings.check.command = "clippy";
     };
 
-    nixd.enable = true;
+    nixd = {
+      enable = true;
+      extraOptions.settings.nixd.formatting.command = [ "nixfmt" ];
+    };
 
     ts_ls.enable = true;
 

@@ -25,7 +25,6 @@ _: {
       "shfmt"
     ];
     ocaml = [ "ocamlformat" ];
-    nix = [ "nixfmt" ];
     "_" = [ "trim_whitespace" ];
   };
 }

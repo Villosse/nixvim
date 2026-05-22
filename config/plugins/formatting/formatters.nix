@@ -8,8 +8,6 @@
     black.command = lib.getExe pkgs.black;
     isort.command = lib.getExe pkgs.isort;
 
-    nixfmt.command = lib.getExe pkgs.nixfmt;
-
     ocamlformat.command = lib.getExe pkgs.ocamlformat;
 
     prettierd.command = lib.getExe pkgs.prettierd;

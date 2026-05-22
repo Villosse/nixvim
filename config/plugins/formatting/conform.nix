@@ -28,7 +28,7 @@ _: {
           if not root then
             return
           end
-          return { lsp_format = "never", timeout_ms = 500 }
+          return { lsp_format = "fallback", timeout_ms = 500 }
         end
       '';
     };
